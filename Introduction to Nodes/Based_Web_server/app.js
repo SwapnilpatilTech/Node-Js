@@ -71,5 +71,6 @@ fs.mkdir(path.join(__dirname, 'logs'), { recursive: true }, (err) => {
 
 // Start server
 server.listen(PORT, () => {
-  console.log(`🚀 Server is running at http://localhost:${PORT}`);
+  console.log(` Server is running at http://localhost:${PORT}`);
 });
+
