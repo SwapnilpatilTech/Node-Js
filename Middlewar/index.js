@@ -1,0 +1,1 @@
+console.log("Middleware index.js file loaded");
