@@ -1,50 +1,63 @@
-This is a basic Product Management REST API built to help beginners understand how real-world APIs work.
-It allows you to add products, view them, and filter/search/sort products using different query parameters.
+<h1>🛒 Simple Product Management API</h1>
 
-This project is ideal if you are learning:
+<p>
+This is a <strong>beginner-friendly REST API</strong> built using Node.js, Express, MongoDB, and Mongoose.
+The goal of this project is to help learners understand how a real backend API works using simple and clean logic.
+</p>
 
-Node.js
+<hr />
 
-Express.js
+<h2>📌 What You Can Do With This API</h2>
 
-MongoDB
+<ul>
+  <li>➕ Add new products</li>
+  <li>📄 Get all products</li>
+  <li>🔍 Get product by ID</li>
+  <li>🔎 Search products by name or brand</li>
+  <li>🧩 Search products using multiple filters</li>
+  <li>📂 Filter products by category</li>
+  <li>💰 Filter products by price range</li>
+  <li>⭐ Filter products by rating</li>
+  <li>📊 Sort products by price</li>
+  <li>📃 Use pagination for large data</li>
+</ul>
 
-Mongoose
+<hr />
 
-REST APIs
+<h2>🧰 Technologies Used</h2>
 
-📌 What This API Can Do
+<table>
+  <tr>
+    <th>Technology</th>
+    <th>Purpose</th>
+  </tr>
+  <tr>
+    <td>Node.js</td>
+    <td>JavaScript runtime</td>
+  </tr>
+  <tr>
+    <td>Express.js</td>
+    <td>Backend framework</td>
+  </tr>
+  <tr>
+    <td>MongoDB</td>
+    <td>NoSQL database</td>
+  </tr>
+  <tr>
+    <td>Mongoose</td>
+    <td>MongoDB object modeling</td>
+  </tr>
+  <tr>
+    <td>dotenv</td>
+    <td>Environment variable management</td>
+  </tr>
+</table>
 
-With this API, you can:
+<hr />
 
-➕ Add a new product to the database
+<h2>📁 Project Structure</h2>
 
-📄 Get all products
-
-🔍 Get a product using its ID
-
-🔎 Search products by name or brand
-
-🧩 Search products using multiple fields together
-
-📂 Filter products by category
-
-💰 Filter products by price range
-
-⭐ Filter products by rating
-
-📊 Sort products by price
-
-📃 Use pagination for large product lists
-
-🧰 Technologies Used
-Technology	Purpose
-Node.js	JavaScript runtime
-Express.js	Backend framework
-MongoDB	Database
-Mongoose	MongoDB ODM
-dotenv	Environment variables
-📁 Project Structure (Simple View)
+<pre>
 project-root/
 │
 ├── controllers/
@@ -59,35 +72,43 @@ project-root/
 ├── .env
 ├── server.js
 └── package.json
+</pre>
 
-⚙️ Setup Instructions (Step by Step)
-1️⃣ Clone the Project
-git clone <your-repository-url>
+<hr />
+
+<h2>⚙️ Setup Instructions</h2>
+
+<h3>1️⃣ Clone the Repository</h3>
+<pre>
+git clone &lt;your-repository-url&gt;
 cd api-practical-task
+</pre>
 
-2️⃣ Install Required Packages
+<h3>2️⃣ Install Dependencies</h3>
+<pre>
 npm install
+</pre>
 
-3️⃣ Create .env File
+<h3>3️⃣ Create Environment File</h3>
+<p>Create a <code>.env</code> file in the root folder:</p>
 
-Create a .env file in the root folder and add:
-
+<pre>
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/product-api
+</pre>
 
+<p><strong>⚠️ Important:</strong> Do not push <code>.env</code> to GitHub.</p>
 
-⚠️ Do not upload .env to GitHub
-
-4️⃣ Run the Server
+<h3>4️⃣ Run the Server</h3>
+<pre>
 npm run dev
+</pre>
 
+<hr />
 
-If everything works correctly, your server will start and connect to MongoDB.
+<h2>📦 Product Schema</h2>
 
-📦 Product Data Structure
-
-Each product stored in the database looks like this:
-
+<pre>
 {
   "productName": "iPhone 15",
   "category": "Electronics",
@@ -96,97 +117,138 @@ Each product stored in the database looks like this:
   "rating": 4.5,
   "description": "Latest iPhone model"
 }
+</pre>
 
-🔗 API Routes Explained (Beginner Style)
-➕ Create Product
-POST /products
+<hr />
 
+<h2>🔗 API Endpoints</h2>
 
-Body (JSON):
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Endpoint</th>
+    <th>Description</th>
+  </tr>
 
-{
-  "productName": "Laptop",
-  "category": "Electronics",
-  "brand": "Dell",
-  "price": 800,
-  "rating": 4
-}
+  <tr>
+    <td>POST</td>
+    <td>/products</td>
+    <td>Create a new product</td>
+  </tr>
 
-📄 Get All Products
-GET /products
+  <tr>
+    <td>GET</td>
+    <td>/products</td>
+    <td>Get all products</td>
+  </tr>
 
-🔍 Get Product by ID
-GET /products/:id
+  <tr>
+    <td>GET</td>
+    <td>/products/:id</td>
+    <td>Get product by ID</td>
+  </tr>
 
-🔎 Search by Product Name
-GET /products/search/name?name=phone
+  <tr>
+    <td>GET</td>
+    <td>/products/search/name?name=phone</td>
+    <td>Search by product name</td>
+  </tr>
 
-🏷️ Search by Brand
-GET /products/search/brand?brand=samsung
+  <tr>
+    <td>GET</td>
+    <td>/products/search/brand?brand=apple</td>
+    <td>Search by brand</td>
+  </tr>
 
-🧩 Search Using Multiple Fields
-GET /products/search/multiple?productName=phone&category=electronics&brand=apple
+  <tr>
+    <td>GET</td>
+    <td>/products/search/multiple</td>
+    <td>Search using multiple fields</td>
+  </tr>
 
+  <tr>
+    <td>GET</td>
+    <td>/products/category?category=electronics</td>
+    <td>Filter by category</td>
+  </tr>
 
-You can pass one, two, or all fields.
+  <tr>
+    <td>GET</td>
+    <td>/products/filter/price?min=500&max=1500</td>
+    <td>Filter by price range</td>
+  </tr>
 
-📂 Filter by Category
-GET /products/category?category=electronics
+  <tr>
+    <td>GET</td>
+    <td>/products/filter/rating?rating=4</td>
+    <td>Filter by rating</td>
+  </tr>
 
-💰 Filter by Price Range
-GET /products/filter/price?min=500&max=1500
+  <tr>
+    <td>GET</td>
+    <td>/products/sort/price?order=asc</td>
+    <td>Sort by price</td>
+  </tr>
 
-⭐ Filter by Rating
-GET /products/filter/rating?rating=4
+  <tr>
+    <td>GET</td>
+    <td>/products/pagination?page=1&limit=5</td>
+    <td>Pagination</td>
+  </tr>
+</table>
 
+<hr />
 
-Returns products with rating greater than or equal to the given value.
+<h2>❗ Error Handling</h2>
 
-📊 Sort Products by Price
-GET /products/sort/price?order=asc
-GET /products/sort/price?order=desc
+<table>
+  <tr>
+    <th>Status Code</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td>Success</td>
+  </tr>
+  <tr>
+    <td>201</td>
+    <td>Created</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>Bad request</td>
+  </tr>
+  <tr>
+    <td>404</td>
+    <td>Not found</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>Server error</td>
+  </tr>
+</table>
 
-📃 Pagination
-GET /products/pagination?page=1&limit=5
+<hr />
 
+<h2>🎯 Who Is This Project For?</h2>
 
-Helps when you have many products.
+<ul>
+  <li>Backend beginners</li>
+  <li>Students learning REST APIs</li>
+  <li>MongoDB & Mongoose learners</li>
+  <li>Mini e-commerce backend practice</li>
+</ul>
 
-❗ Error Handling (Simple Explanation)
+<hr />
 
-The API returns clear error messages:
+<hr />
 
-Status Code	Meaning
-200	Request successful
-201	Product created
-400	Missing or invalid data
-404	Product not found
-500	Server error
+<h2>🚀 Future Improvements</h2>
 
-Example error:
-
-{
-  "message": "No products found"
-}
-
-🎯 Who Should Use This Project?
-
-Beginners learning backend development
-
-Students practicing REST APIs
-
-Anyone building a small e-commerce backend
-
-Developers learning MongoDB filtering
-
-✅ Next Improvements You Can Add
-
-✏️ Update product API
-
-🗑️ Delete product API
-
-🖼️ Product image upload
-
-👤 Authentication (JWT)
-
-🛒 Cart system
+<ul>
+  <li>✏️ Update product</li>
+  <li>🗑️ Delete product</li>
+  <li>🖼️ Image upload</li>
+  <li>🔐 Authentication</li>
+  <li>🛒 Cart system</li>
+</ul>
