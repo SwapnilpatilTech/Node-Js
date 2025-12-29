@@ -10,7 +10,8 @@ A full-stack web application for managing and browsing a movie store. Built with
 - View movie details
 - Upload movie posters
 - Responsive design
-
+<img src="https://github.com/SwapnilpatilTech/Node-Js/blob/fccec037ce93092533b3c97cff5f47be362c76b3/Moviestore/frontend/src/assets/Screenshot%202025-12-09%20200836.png" width="100%" />
+video : https://drive.google.com/file/d/15soOJB5mCp2cqiNHBaT4KkOWOmB0qVPn/view?usp=sharing
 ## Tech Stack
 
 ### Backend
